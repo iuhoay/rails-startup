@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :require_no_logined, only: [:create, :new]
+
   def new
     @user = User.new
   end

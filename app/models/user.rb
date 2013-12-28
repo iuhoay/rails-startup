@@ -11,8 +11,21 @@ class User < ActiveRecord::Base
 
   before_create :email_lower
 
+  def remember_token
+    [id, Digest::SHA512.hexdigest(password_digest)].join('$')
+  end
+
+  def self.find_by_remember_token(token)
+    user = first(conditions: { id: token.split('$').first })
+    if user && user.remember_token == token
+      user
+    else
+      nil
+    end
+  end
+
   private
-    
+
     def email_lower
       self.email = self.email.downcase
     end
