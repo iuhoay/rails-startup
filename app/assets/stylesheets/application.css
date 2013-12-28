@@ -12,3 +12,9 @@
  *= require_tree .
  *= require 'bootstrap'
  */
+
+
+.nav .avatar {
+  border-radius: 3px;
+  box-shadow: 0 1px #000;
+}
