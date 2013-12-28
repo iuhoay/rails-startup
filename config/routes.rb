@@ -2,10 +2,6 @@ RailsBootstrap::Application.routes.draw do
 
   root "users#index"
 
-  get "users/signup"
-  get "session/signin"
-  get "session/signup"
-
   get "about" => "static_pages#about"
   get "contact" => "static_pages#contact"
 
