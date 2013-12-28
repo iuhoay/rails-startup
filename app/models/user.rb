@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def to_param
+    name
+  end
+
   private
 
     def email_lower

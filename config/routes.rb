@@ -11,5 +11,5 @@ RailsBootstrap::Application.routes.draw do
   post "signin" => "session#create"
   post "logout" => "session#destroy"
 
-  resources :users
+  get "~:name" => "users#show", as: :user
 end

@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     @users = User.recent.page(params[:page]).per(16)
   end
 
+  def show
+    @user = User.where(name: params[:name]).first
+  end
+
   private
 
     def signup_params
