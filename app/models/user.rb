@@ -1,15 +1,19 @@
-require "bcrypt"
-
 class User < ActiveRecord::Base
-  # user.password_hash in the database is a :string
-  include BCrypt
+  has_secure_password
 
-  def password
-    @password ||= Password.new(password_hash)
-  end
+  validates :name, presence: true, uniqueness: { case_sensitive: false }, length: { in: 3..20 }, on: :create
 
-  def password=(new_password)
-    @password = Password.create(new_password)
-    self.password_hash = @password
-  end
+  validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/ }
+  validates :password, presence: true, length: { in: 6..16 }
+
+  validates :password, confirmation: true, on: :create
+  validates :password_confirmation, presence: true, on: :create
+
+  before_create :email_lower
+
+  private
+    
+    def email_lower
+      self.email = self.email.downcase
+    end
 end

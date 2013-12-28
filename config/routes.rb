@@ -1,5 +1,6 @@
 RailsBootstrap::Application.routes.draw do
 
+  get "users/signup"
   get "session/signin"
   get "session/signup"
   root "static_pages#index"
@@ -7,8 +8,13 @@ RailsBootstrap::Application.routes.draw do
   get "about" => "static_pages#about"
   get "contact" => "static_pages#contact"
 
-  get "signin" => "session#signin"
-  get "signup" => "session#signup"
+  get "signup" => "users#new"
+  post "signup" => "users#create"
+  get "signin" => "session#new"
+  post "signin" => "session#create"
+  post "logout" => "session#destroy"
+
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -17,11 +17,15 @@
         <li class="<%= 'active' if current_page?(contact_path)  %>" ><%= link_to "Contact", contact_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <% unless current_page?(signup_path) %>
-        <li><%= link_to "注册", signup_path %></li>
-        <% end %>
-        <% unless current_page?(signin_path) %>
-        <li><%= link_to "登录", signin_path %></li>
+        <% if logined? %>
+          <li><%= link_to "退出", logout_path, data: { method: :post } %></li>
+        <% else %>
+          <% unless current_page?(signup_path) %>
+          <li><%= link_to "注册", signup_path %></li>
+          <% end %>
+          <% unless current_page?(signin_path) %>
+          <li><%= link_to "登录", signin_path %></li>
+          <% end %>
         <% end %>
       </ul>
     </div>

@@ -1,0 +1,9 @@
+<%= form_for(User.new, url: signin_path, html: { class: "form-sign form-signin"}) do |f| %>
+  <h2 class="form-sign-heading">登录</h2>
+  <%= f.text_field :email, class: "form-control", placeholder: "邮箱地址", required: true, autofocus: true %>
+  <%= f.password_field :password, class: "form-control", placeholder: "密码", required: true %>
+  <label class="checkbox" for="">
+    <input type="checkbox" name="" id="" value="remember-me"> Remember me
+  </label>
+  <%= f.submit "登录", class: "btn btn-lg btn-primary btn-block" %>
+<% end %>
