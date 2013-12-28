@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 
   before_create :email_lower
 
+  scope :recent, -> { order("id desc") }
+
   def remember_token
     [id, Digest::SHA512.hexdigest(password_digest)].join('$')
   end

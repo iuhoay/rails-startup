@@ -16,10 +16,16 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 # 
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+# 分页
+gem 'kaminari'
+
 group :development do
   # better_error
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  # 
+  gem 'faker', '1.2.0'
 end
 
 group :doc do

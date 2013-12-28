@@ -16,6 +16,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.recent.page(params[:page]).per(16)
+  end
+
   private
 
     def signup_params

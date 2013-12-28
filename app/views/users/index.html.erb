@@ -1,0 +1,9 @@
+<div class="user-list">
+  <% @users.each do |user| %>
+    <div class="user-item">
+      <%= image_tag avatar_url(user.email, 48) %>
+      <%= user.name %>
+    </div>
+  <% end %>
+  <%= paginate @users %>
+</div>
