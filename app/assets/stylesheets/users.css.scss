@@ -1,16 +1,13 @@
 .user-list {
   padding: 40px 50px;
-  max-width: 1000px;
-  margin: 0 auto;
   .user-item {
     border: 1px solid #CCC;
     padding: 5px;
     display: inline-block;
-    width: 200px;
     border-radius: 4px;
     box-shadow: 2px 2px 5px #CCC;
-    margin-right: 22px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    width: 100%;
   }
 }
 
