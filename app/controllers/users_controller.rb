@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.where(name: params[:name]).first
+    @user = User.where(name: params[:name]).first || not_found
   end
 
   private
