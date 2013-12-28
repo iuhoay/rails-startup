@@ -13,6 +13,9 @@ gem 'jbuilder', '~> 1.2'
 # bootstrap
 gem 'bootstrap-sass', '~> 3.0.3.0'
 
+# 
+gem 'bcrypt-ruby', '3.1.2'
+
 group :development do
   # better_error
   gem 'better_errors'
