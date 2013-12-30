@@ -12,4 +12,9 @@ Startup::Application.routes.draw do
 
   get "account/edit" => "account#edit", as: :edit_account
   put "account" => "account#update"
+
+  namespace :admin do
+    root "users#index"
+    resources :users
+  end
 end

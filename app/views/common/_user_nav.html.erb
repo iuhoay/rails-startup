@@ -10,6 +10,7 @@
         <li class="<%= 'active' if current_page?(user_path(current_user)) %>"><%= link_to "我的首页", user_path(current_user) %></li>
         <li class="<%= 'active' if current_page?(edit_account_path) %>"><%= link_to "个人设置", edit_account_path %></li>
         <li><%= link_to "退出", logout_path, data: { method: :delete } %></li>
+        <li><%= link_to "后台", admin_root_path %></li>
       </ul>
     </li>
   <% else %>
