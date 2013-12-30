@@ -9,7 +9,7 @@ RailsBootstrap::Application.routes.draw do
   post "signup" => "users#create"
   get "signin" => "session#new"
   post "signin" => "session#create"
-  post "logout" => "session#destroy"
+  delete "logout" => "session#destroy"
 
   get "~:name" => "users#show", as: :user
 
