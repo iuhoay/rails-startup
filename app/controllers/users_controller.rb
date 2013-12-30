@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :require_no_logined, only: [:create, :new]
+  before_action :find_user_by_email, only: [:show, :edit]
 
   def new
     @user = User.new
@@ -21,7 +22,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.where(name: params[:name]).first || not_found
   end
 
   private
@@ -29,4 +29,9 @@ class UsersController < ApplicationController
     def signup_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
+
+    def find_user_by_email
+      @user = User.where(name: params[:name]).first || not_found
+    end
+
 end

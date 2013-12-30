@@ -1,5 +1,5 @@
-<%= form_for(@user, url: signup_path, html: { class: "form-sign form-signup" }) do |f| %>
-  <h2 class="form-sign form-signup">注册</h2>
+<%= form_for(@user, url: signup_path, html: { class: "form form-signup" }) do |f| %>
+  <h2 class="form-heading">注册</h2>
   <% if @user.errors.any? %>
     <ul>
       <% @user.errors.full_messages.each do |msg| %>

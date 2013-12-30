@@ -12,4 +12,7 @@ RailsBootstrap::Application.routes.draw do
   post "logout" => "session#destroy"
 
   get "~:name" => "users#show", as: :user
+
+  get "account/edit" => "account#edit", as: :edit_account
+  put "account" => "account#update"
 end

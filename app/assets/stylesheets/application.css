@@ -11,10 +11,5 @@
  *= require_self
  *= require_tree .
  *= require 'bootstrap'
+ *= require 'common'
  */
-
-
-.nav .avatar {
-  border-radius: 3px;
-  box-shadow: 0 1px #000;
-}
