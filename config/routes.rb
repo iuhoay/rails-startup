@@ -1,4 +1,4 @@
-RailsBootstrap::Application.routes.draw do
+Startup::Application.routes.draw do
 
   root "users#index"
 
