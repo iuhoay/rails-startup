@@ -12,4 +12,8 @@ module ApplicationHelper
   def link_to_user(user)
     link_to user.name, user_path(user)
   end
+
+  def error_message(obj)
+    render partial: 'common/error_message', locals: { obj: obj }
+  end
 end

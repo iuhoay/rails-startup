@@ -1,12 +1,6 @@
 <%= form_for(@user, url: signup_path, html: { class: "form form-signup" }) do |f| %>
+  <%= error_message @user %>
   <h2 class="form-heading">注册</h2>
-  <% if @user.errors.any? %>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
   <%= f.text_field :name, class: "form-control form-signup-name", placeholder: "用户名", required: true, autofocus: true %>
   <%= f.text_field :email, class: "form-control form-signup-email", placeholder: "邮箱地址", required: true %>
   <%= f.password_field :password, class: "form-control form-signup-password", placeholder: "密码", required: true %>
