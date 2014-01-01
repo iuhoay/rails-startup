@@ -26,3 +26,5 @@ module Startup
     end
   end
 end
+
+APP_CONFIG = YAML.load_file("#{Rails.root}/config/app_config.yml")[Rails.env]
