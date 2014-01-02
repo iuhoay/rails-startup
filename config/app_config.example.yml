@@ -1,0 +1,13 @@
+defaults: &defaults
+  admin_emails:
+    - "admin@startup.com"
+
+production:
+  <<: *defaults
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+

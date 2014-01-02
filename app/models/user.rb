@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
     name
   end
 
+  def admin?
+    APP_CONFIG['admin_emails'].include?(self.email)
+  end
+
   private
 
     def email_lower
