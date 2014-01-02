@@ -16,4 +16,8 @@ module ApplicationHelper
   def error_message(obj)
     render partial: 'common/error_message', locals: { obj: obj }
   end
+
+  def format_date(dateTime)
+    dateTime.strftime('%Y-%m-%d %H:%M:%S')
+  end
 end

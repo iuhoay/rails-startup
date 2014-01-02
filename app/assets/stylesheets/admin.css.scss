@@ -16,22 +16,22 @@ body {
 
   .row-offcanvas-left {
     .sidebar-offcanvas {
-      right: -50%;
+      left: -50%;
     }
   }
 
   .row-offcanvas-right {
     .sidebar-offcanvas {
-      left: -50%;
+      right: -50%;
     }
   }
 
   .row-offcanvas-left.active {
-    right: 50%;
+    left: 50%;
   }
 
   .row-offcanvas-right.active {
-    left: 50%;
+    right: 50%;
   }
 
   .sidebar-offcanvas {

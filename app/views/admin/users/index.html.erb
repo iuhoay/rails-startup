@@ -1,1 +1,23 @@
-<h1 class="text-center">Hello world!</h1>
+<table class="table" border="0">
+  <thead>
+    <tr>
+      <th>用户名称</th>
+      <th>邮箱</th>
+      <th>加入时间</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= format_date(user.created_at) %></td>
+        <td>
+          <%= link_to "删除", admin_user_path(user.id), data: { method: :delete, confirm: "确定删除吗？" }, class: "btn btn-danger btn-xs" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @users %>
