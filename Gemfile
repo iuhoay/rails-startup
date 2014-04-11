@@ -11,7 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # bootstrap
-gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 # 
 gem 'bcrypt-ruby', '~> 3.1.2'
