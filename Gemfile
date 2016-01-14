@@ -18,6 +18,7 @@ gem 'bcrypt'
 
 # 分页
 gem 'kaminari'
+gem 'ruby_identicon'
 
 group :development do
   # better_error

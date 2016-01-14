@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true, on: :create
   validates :password_confirmation, presence: true, on: :create
 
-  before_create :email_lower
+  before_create :email_lower, :generate_avatar
 
   scope :recent, -> { order("id desc") }
 
@@ -38,5 +38,9 @@ class User < ActiveRecord::Base
 
     def email_lower
       self.email = self.email.downcase
+    end
+
+    def generate_avatar
+      self.avatar_base = RubyIdenticon.create_base64(self.name)
     end
 end

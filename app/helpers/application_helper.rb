@@ -1,12 +1,14 @@
 module ApplicationHelper
 
+  # for gravatar
   def avatar_url(email, size)
     gravatar_id = Digest::MD5.hexdigest(email)
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
 
   def avatar_image(user, size)
-    image_tag avatar_url(user.email, size), class: 'avatar'
+    # image_tag avatar_url(user.email, size), class: 'avatar'
+    image_tag "data:image/png;base64,#{user.avatar_base}", class: 'avatar', style: "width: #{size}px"
   end
 
   def link_to_user(user)
