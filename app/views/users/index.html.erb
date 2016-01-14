@@ -1,11 +1,4 @@
 <div class="user-list row">
-  <% @users.each do |user| %>
-    <div class="col-lg-3 col-md-3 col-sm-6">
-      <div class="user-item">
-        <%= avatar_image(user, 48) %>
-        <%= link_to_user user %>
-      </div>
-    </div>
-  <% end %>
+  <%= render(@users) || content_tag(:h3, "No one here.") %>
   <%= paginate @users %>
 </div>
