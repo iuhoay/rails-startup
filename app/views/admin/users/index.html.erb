@@ -10,11 +10,11 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
+        <td><%= user.name %>  <%= content_tag(:span, 'admin', class: 'label label-warning') if user.admin? %></td>
         <td><%= user.email %></td>
         <td><%= format_date(user.created_at) %></td>
         <td>
-          <%= link_to "删除", admin_user_path(user.id), data: { method: :delete, confirm: "确定删除吗？" }, class: "btn btn-danger btn-xs" %>
+          <%= link_to("删除", admin_user_path(user.id), data: { method: :delete, confirm: "确定删除吗？" }, class: "btn btn-danger btn-xs") unless current_user == user %>
         </td>
       </tr>
     <% end %>
