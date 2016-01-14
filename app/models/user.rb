@@ -41,6 +41,6 @@ class User < ActiveRecord::Base
     end
 
     def generate_avatar
-      self.avatar_base = RubyIdenticon.create_base64(self.name)
+      self.avatar_base = RubyIdenticon.create_base64(self.name, background_color: 0xffffffff)
     end
 end
