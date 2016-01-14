@@ -1,4 +1,4 @@
-source 'http://ruby.taobao.org'
+source 'https://ruby.taobao.org'
 
 gem 'rails', '4.1.0'
 gem 'sqlite3'
@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '~> 3.1.1'
 
 # 
-gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt'
 
 # 分页
 gem 'kaminari'
