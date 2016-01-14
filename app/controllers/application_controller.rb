@@ -72,6 +72,9 @@ class ApplicationController < ActionController::Base
   end
 
   def require_admin
-    current_user.admin?
+    unless current_user.admin?
+      flash[:alert] = "你没有权限"
+      redirect_to root_url
+    end
   end
 end
