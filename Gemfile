@@ -24,7 +24,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
 
   # 
   gem 'faker', '1.2.0'
