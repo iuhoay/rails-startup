@@ -1,6 +1,6 @@
 source 'https://ruby.taobao.org'
 
-gem 'rails', '4.1.0'
+gem 'rails', '4.2.5'
 gem 'sqlite3'
 
 gem 'sass-rails', '~> 4.0.0'
@@ -23,6 +23,8 @@ group :development do
   # better_error
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem 'web-console', '~> 2.0'
 
   # 
   gem 'faker', '1.2.0'
