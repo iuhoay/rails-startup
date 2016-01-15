@@ -5,6 +5,15 @@ class ApplicationController < ActionController::Base
 
   helper_method :logined?, :current_user
 
+  before_action :set_locale
+
+  def set_locale
+    I18n.locale = user_locale
+    cookies[:locale] = params[:locale] if params[:locale]
+  rescue I18n::InvalidLocale
+    cookies[:locale] = I18n.locale = I18n.default_locale
+  end
+
   def login_as(user)
     session[:user_id] = user.id
     @current_user = user
@@ -77,4 +86,14 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
     end
   end
+
+  private
+
+    def user_locale
+      params[:locale] || cookies[:locale] || http_head_locale || I18n.default_locale
+    end
+
+    def http_head_locale
+      http_accept_language.language_region_compatible_from(I18n.available_locales)
+    end
 end

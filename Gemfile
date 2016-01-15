@@ -19,6 +19,7 @@ gem 'bcrypt'
 # 分页
 gem 'kaminari'
 gem 'ruby_identicon'
+gem 'http_accept_language'
 
 group :development do
   # better_error

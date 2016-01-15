@@ -1,0 +1,8 @@
+"zh-CN":
+  menu:
+    home: '我的主页'
+    setting: '个人设置'
+    logout: '退出'
+    admin: '后台'
+    signup: '注册'
+    signin: '登录'

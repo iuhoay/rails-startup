@@ -7,21 +7,21 @@
         <b class="caret"></b>
       <% end %>
       <ul class="dropdown-menu">
-        <li class="<%= 'active' if current_page?(user_path(current_user)) %>"><%= link_to "我的首页", user_path(current_user) %></li>
-        <li class="<%= 'active' if current_page?(edit_account_path) %>"><%= link_to "个人设置", edit_account_path %></li>
-        <li><%= link_to "退出", logout_path, data: { method: :delete } %></li>
+        <li class="<%= 'active' if current_page?(user_path(current_user)) %>"><%= link_to t(:home, scope: :menu), user_path(current_user) %></li>
+        <li class="<%= 'active' if current_page?(edit_account_path) %>"><%= link_to t(:setting, scope: :menu), edit_account_path %></li>
+        <li><%= link_to t('menu.logout'), logout_path, data: { method: :delete } %></li>
         <% if current_user.admin? %>
           <li class="divider"></li>
-          <li><%= link_to "后台", admin_root_path %></li>
+          <li><%= link_to t('menu.admin'), admin_root_path %></li>
         <% end %>
       </ul>
     </li>
   <% else %>
     <% unless current_page?(signup_path) %>
-    <li><%= link_to "注册", signup_path %></li>
+    <li><%= link_to t('menu.signup'), signup_path %></li>
     <% end %>
     <% unless current_page?(signin_path) %>
-    <li><%= link_to "登录", signin_path %></li>
+    <li><%= link_to t('menu.signin'), signin_path %></li>
     <% end %>
   <% end %>
 </ul>

@@ -1,0 +1,8 @@
+"zh-CN":
+  menu:
+    home: 'home'
+    setting: 'setting'
+    logout: 'logout'
+    admin: 'admin'
+    signup: 'signup'
+    signin: 'signin'
