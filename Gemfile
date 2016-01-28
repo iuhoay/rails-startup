@@ -16,6 +16,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 # 
 gem 'bcrypt'
 
+gem 'rack-mini-profiler', require: false
+
 # 分页
 gem 'kaminari'
 gem 'ruby_identicon'
